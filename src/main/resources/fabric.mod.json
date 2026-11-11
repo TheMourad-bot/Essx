@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "essx",
+  "version": "${version}",
+  "name": "ESSX",
+  "description": "A social and cosmetics client mod for Minecraft.",
+  "authors": ["TheMourad"],
+  "contact": {
+    "sources": "https://github.com/TheMourad-bot/Essx"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.themourad.essx.EssxClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.1.2",
+    "fabric-api": "*"
+  }
+}
