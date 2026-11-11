@@ -26,10 +26,10 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v5
         with:
-          gradle-version: '9.4'
+          gradle-version: '9.4.0'
 
       - name: Build mod
-        run: gradle build --no-daemon
+        run: gradle build --no-daemon --stacktrace
 
       - name: Upload mod JAR
         uses: actions/upload-artifact@v4
