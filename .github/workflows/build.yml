@@ -29,9 +29,22 @@ jobs:
           gradle-version: '9.8.2'
 
       - name: Build mod
-        run: gradle build --no-daemon --stacktrace
+        shell: bash
+        run: |
+          set -o pipefail
+          gradle build --no-daemon --stacktrace --console=plain 2>&1 | tee build.log
+
+      - name: Upload build diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ESSX-build-diagnostics
+          path: build.log
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Upload mod JAR
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: ESSX-mod
