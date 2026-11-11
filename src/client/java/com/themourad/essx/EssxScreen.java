@@ -68,34 +68,41 @@ public final class EssxScreen extends Screen {
         switch (activeTab) {
             case "Home" -> {
                 graphics.text(this.font, "Welcome to ESSX", x, y, 0xFFFFFFFF, true);
-                graphics.text(this.font, "Your Minecraft social hub is ready to take shape.", x, y + 24, 0xFFB6C5D9, false);
-                graphics.text(this.font, "Right Shift opens this menu in-game.", x, y + 58, 0xFF79C8FF, false);
-                graphics.text(this.font, "Online services are not connected yet.", x, y + 92, 0xFFFFC979, false);
+                graphics.text(this.font, "Local profile: " + EssxLocalProfile.getDisplayName(), x, y + 24, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Your selected style: " + EssxLocalProfile.getActiveCosmetic(), x, y + 48, 0xFF79C8FF, false);
+                graphics.text(this.font, "Right Shift opens ESSX. K cycles your style.", x, y + 82, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Online services are not connected yet.", x, y + 116, 0xFFFFC979, false);
             }
             case "Friends" -> {
                 graphics.text(this.font, "Friends list", x, y, 0xFFFFFFFF, true);
-                graphics.text(this.font, "Your friends will appear here when an ESSX account service exists.", x, y + 28, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Online friends need an ESSX account service.", x, y + 28, 0xFFB6C5D9, false);
+                graphics.text(this.font, "This client does not collect Microsoft passwords or session tokens.", x, y + 54, 0xFF8FD6B0, false);
             }
             case "Messages" -> {
                 graphics.text(this.font, "Private messages", x, y, 0xFFFFFFFF, true);
-                graphics.text(this.font, "Messaging will be enabled after the secure service is built.", x, y + 28, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Secure messaging will be connected through an ESSX service.", x, y + 28, 0xFFB6C5D9, false);
             }
             case "Invites" -> {
                 graphics.text(this.font, "Party invites", x, y, 0xFFFFFFFF, true);
-                graphics.text(this.font, "Join and invite friends here once online support is ready.", x, y + 28, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Party invites need online account and presence services.", x, y + 28, 0xFFB6C5D9, false);
             }
             case "Gallery" -> {
                 graphics.text(this.font, "Screenshot gallery", x, y, 0xFFFFFFFF, true);
-                graphics.text(this.font, "Local screenshot browsing is planned for a later stage.", x, y + 28, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Your Minecraft screenshots stay in the normal screenshots folder.", x, y + 28, 0xFFB6C5D9, false);
+                graphics.text(this.font, "A built-in image browser is planned for the next pass.", x, y + 54, 0xFFB6C5D9, false);
             }
             case "Wardrobe" -> {
-                graphics.text(this.font, "Wardrobe", x, y, 0xFFFFFFFF, true);
-                graphics.text(this.font, "Cosmetic previews and equipped looks will live here.", x, y + 28, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Local style preset", x, y, 0xFFFFFFFF, true);
+                graphics.text(this.font, "Selected: " + EssxLocalProfile.getActiveCosmetic(), x, y + 28, 0xFF79C8FF, false);
+                graphics.text(this.font, "Press K to cycle: Aurora, Midnight, Ember, Ocean, Emerald.", x, y + 56, 0xFFB6C5D9, false);
+                graphics.text(this.font, "These are local presets, not server-side capes or skins.", x, y + 84, 0xFFFFC979, false);
             }
             case "Settings" -> {
                 graphics.text(this.font, "Settings", x, y, 0xFFFFFFFF, true);
-                graphics.text(this.font, "The menu opens with Right Shift.", x, y + 28, 0xFFB6C5D9, false);
-                graphics.text(this.font, "No Microsoft passwords or account tokens are collected.", x, y + 54, 0xFF8FD6B0, false);
+                graphics.text(this.font, "Open menu: Right Shift", x, y + 28, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Cycle local style: K", x, y + 54, 0xFFB6C5D9, false);
+                graphics.text(this.font, "Your local profile is saved in config/essx/profile.properties.", x, y + 80, 0xFFB6C5D9, false);
+                graphics.text(this.font, "No Microsoft credentials are collected.", x, y + 106, 0xFF8FD6B0, false);
             }
             default -> graphics.text(this.font, "Coming soon.", x, y, 0xFFB6C5D9, false);
         }
