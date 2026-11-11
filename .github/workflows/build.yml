@@ -2,7 +2,7 @@ name: Build ESSX
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, "rebuild/**" ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out source
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Java 25
@@ -26,7 +26,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v5
         with:
-          gradle-version: '9.4.0'
+          gradle-version: '9.8.2'
 
       - name: Build mod
         run: gradle build --no-daemon --stacktrace
