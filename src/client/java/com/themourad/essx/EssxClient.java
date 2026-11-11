@@ -38,7 +38,7 @@ public final class EssxClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (OPEN_MENU.consumeClick()) {
                 if (client.player != null) {
-                    client.setScreen(new EssxScreen());
+                    client.gui.setScreen(new EssxScreen());
                 }
             }
             while (CYCLE_COSMETIC.consumeClick()) {
