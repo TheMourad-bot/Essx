@@ -3,7 +3,7 @@
   "id": "essx",
   "version": "${version}",
   "name": "ESSX",
-  "description": "A social and cosmetics client mod for Minecraft.",
+  "description": "A social hub and cosmetics client for Minecraft.",
   "authors": ["TheMourad"],
   "contact": {
     "sources": "https://github.com/TheMourad-bot/Essx"
@@ -16,7 +16,7 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.19.5",
+    "fabricloader": ">=0.20.1",
     "minecraft": "~26.1.2",
     "java": ">=25",
     "fabric-api": "*"
