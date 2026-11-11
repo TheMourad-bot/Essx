@@ -28,7 +28,6 @@ public final class EssxScreen extends Screen {
             int y = sidebarY + i * 34;
             this.addRenderableWidget(Button.builder(Component.literal(tab), button -> {
                 activeTab = tab;
-                rebuildWidgets();
             }).bounds(sidebarX, y, 148, 26).build());
         }
 
