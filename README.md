@@ -2,7 +2,7 @@
 
 **ESSX** is a Fabric client-side social hub for Minecraft Java Edition.
 
-## Current target
+## Target versions
 
 - Minecraft 26.1.2
 - Java 25
@@ -10,29 +10,26 @@
 - Fabric API 0.155.3+26.1.2
 - Fabric Loom 1.19-SNAPSHOT
 
-## Current foundation
+## Working client features
 
-- Right Shift opens the ESSX menu.
-- Sidebar navigation: Home, Friends, Messages, Invites, Gallery, Wardrobe, Settings.
-- Dark custom interface.
-- Client-only; it does not require installation on a multiplayer server.
+- Right Shift opens the ESSX screen.
+- Sidebar navigation for Home, Friends, Messages, Invites, Gallery, Wardrobe, and Settings.
+- Local profile file is created at `config/essx/profile.properties`.
+- Five persistent local style presets: Aurora, Midnight, Ember, Ocean, and Emerald.
+- Press K to cycle the selected local style.
+- Client-only: no server installation is required.
+- No Microsoft password, Minecraft session token, or account credential collection.
 
-## Development roadmap
+## Online features
 
-1. Stable client foundation and polished interface.
-2. Local settings and screenshot gallery.
-3. Account and friends service.
-4. Messaging and party invites.
-5. Cosmetics and profile features.
-
-Online features require a separate secure service. This initial build does not collect Microsoft passwords, session tokens, or other account credentials.
+Friends, private messages, party invites, account sync, and shared cosmetics require a secure online service. Those features are not falsely presented as working in this client-only build. They need a separately deployed backend, account system, and privacy/security design before they can be enabled.
 
 ## Build
 
-Use Java 25 and Gradle 9.8.2 or newer compatible with the configured Fabric Loom version.
+Use Java 25 and the Gradle version configured in the workflow:
 
 ```sh
-gradle build
+gradle build --no-daemon
 ```
 
-The mod JAR is created in `build/libs/`.
+The mod JAR is output to `build/libs/`.
